@@ -84,4 +84,4 @@ If you want to modify the formula or contribute to its development:
 
 ## Troubleshooting
 
-If you encounter issues such as missing files (e.g., `macos-os-proxyguard-wrapper.sh`), ensure that the script is available in the source tarball or downloaded during installation.
+If you encounter issues such as missing files (e.g., `macos-os-proxyguard-wrapper.sh`), ensure that the script is available as `proxyguard-wrapper` and downloaded during installation.
