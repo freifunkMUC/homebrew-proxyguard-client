@@ -4,7 +4,7 @@ This repository contains the Homebrew formula for installing the Proxyguard Clie
 
 ## About
 
-The Proxyguard Client depends on [Proxyguard](https://codeberg.org/eduVPN/proxyguard), a project designed to enable secure and flexible proxy configurations. This tool is particularly useful in scenarios where UDP traffic is not allowed, and you need to use TCP/HTTPS traffic to work around Internet restrictions or limitations, such as in guest WLANs.
+The Proxyguard Client depends on [Proxyguard](https://codeberg.org/eduVPN/proxyguard), a project designed to proxy UDP connections over HTTP(s). The main use case is to proxy WireGuard packets. This tool is particularly useful in scenarios where UDP traffic is not allowed, and you need to use TCP/HTTPS traffic to work around Internet restrictions or limitations, such as in guest WLANs.
 
 ## Installation
 
