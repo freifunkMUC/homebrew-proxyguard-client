@@ -7,7 +7,7 @@ This repository contains the Homebrew formula for installing the Proxyguard Clie
 To install the Proxyguard Client using Homebrew, run the following command:
 
 ```bash
-brew tap freifunkMUC/homebrew-proxyguard-client
+brew tap freifunkmuc/homebrew-proxyguard-client
 brew install proxyguardclient
 ```
 
