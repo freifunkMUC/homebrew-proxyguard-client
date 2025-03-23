@@ -15,10 +15,35 @@ brew install proxyguardclient
 
 After installation, you can use the Proxyguard Client and its wrapper script as follows:
 
+### Using the Wrapper Script
+
+The wrapper script simplifies setting up routes and running the Proxyguard Client. To use it, provide the VPN gateway as an argument:
+
 ```bash
-proxyguard-client
-proxyguard-wrapper
+proxyguard-wrapper <VPN_GATEWAY>
 ```
+
+For example, to use the VPN gateway `rw-vpn02.ext.ffmuc.net`:
+
+```bash
+proxyguard-wrapper rw-vpn02.ext.ffmuc.net
+```
+
+The script will:
+1. Resolve the IPv4 and IPv6 addresses of the VPN gateway.
+2. Add the necessary routes to the system.
+3. Start the Proxyguard Client to forward traffic to the VPN gateway.
+4. Automatically clean up routes when the process exits.
+
+### Running the Proxyguard Client Directly
+
+If you prefer to run the Proxyguard Client directly, use the following command:
+
+```bash
+proxyguard-client --to "https://<VPN_GATEWAY>" --forward-port 51299
+```
+
+Replace `<VPN_GATEWAY>` with the address of your VPN gateway.
 
 ## Development
 
@@ -30,11 +55,11 @@ If you want to modify the formula or contribute to its development:
    cd homebrew-proxyguard-client
    ```
 
-2. Edit the formula located at `Formular/proxyguardclient.rb`.
+2. Edit the formula located at `Formula/proxyguardclient.rb`.
 
 3. Test the formula locally:
    ```bash
-   brew install --build-from-source Formular/proxyguardclient.rb
+   brew install --build-from-source Formula/proxyguardclient.rb
    ```
 
 ## Troubleshooting

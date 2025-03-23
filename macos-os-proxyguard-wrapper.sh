@@ -20,6 +20,7 @@ fi
 
 # Get the default gateway
 DEFAULT_GATEWAY=$(route -n get default | grep gateway | awk '{print $2}')
+DEFAULT_GATEWAY6=$(route -n get -inet6 default | grep gateway | awk '{print $2}')
 
 # Add routes
 if [[ -n "$VPN_IPV4" ]]; then
@@ -29,7 +30,7 @@ fi
 
 if [[ -n "$VPN_IPV6" ]]; then
   echo "Adding IPv6 route for $VPN_IPV6"
-  sudo route -nv add -inet6 -net "$VPN_IPV6/128" "$DEFAULT_GATEWAY"
+  sudo route -nv add -inet6 -net "$VPN_IPV6/128" "$DEFAULT_GATEWAY6"
 fi
 
 # Run proxyguard-client
