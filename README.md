@@ -2,6 +2,10 @@
 
 This repository contains the Homebrew formula for installing the Proxyguard Client, a tool for managing proxy configurations.
 
+## About
+
+The Proxyguard Client depends on [Proxyguard](https://codeberg.org/eduVPN/proxyguard), a project designed to enable secure and flexible proxy configurations. This tool is particularly useful in scenarios where UDP traffic is not allowed, and you need to use TCP/HTTPS traffic to work around Internet restrictions or limitations, such as in guest WLANs.
+
 ## Installation
 
 To install the Proxyguard Client using Homebrew, run the following command:
@@ -44,6 +48,22 @@ proxyguard-client --to "https://<VPN_GATEWAY>" --forward-port 51299
 ```
 
 Replace `<VPN_GATEWAY>` with the address of your VPN gateway.
+
+### Configuring WireGuard
+
+To use the Proxyguard Client with WireGuard, you need to modify your local WireGuard configuration file. 
+
+1. In the `[Interface]` section, add the following line:
+   ```ini
+   ListenPort = 51299
+   ```
+
+2. Under the `[Peer]` section, change the `Endpoint` to:
+   ```ini
+   Endpoint = 127.0.0.1:51821
+   ```
+
+These changes ensure that WireGuard listens on the correct port and forwards traffic through the Proxyguard Client.
 
 ## Development
 
