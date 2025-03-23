@@ -1,6 +1,6 @@
 # Homebrew Proxyguard Client Formula
 
-This repository contains the Homebrew formula for installing the Proxyguard Client, a tool for managing proxy configurations.
+This repository contains the Homebrew formula for installing the Proxyguard Client, a tool for running Wireguard over HTTP/HTTPS.
 
 ## About
 
